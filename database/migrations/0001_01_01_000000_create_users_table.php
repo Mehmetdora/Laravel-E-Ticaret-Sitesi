@@ -16,6 +16,11 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
+
+            $table->string('phone_country_code', 5)->nullable(); // Örnek: +90, +1
+            $table->string('phone_number', 15)->nullable(); // Örnek: 5551234567
+            $table->string('avatar_url')->default(asset('default_images/default_profile_photo.jpg'));
+
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();

@@ -13,7 +13,12 @@ Route::controller(UnsignedPagesController::class)->group(function(){
 
 Route::controller(AuthController::class)->group(function(){
 
+    Route::get('/logout','logout')->name('logout');
+
     Route::get('/login','login')->name('login');
     Route::get('/register','register')->name('register');
+
+    Route::post('/logined','logined')->name('logined');
+    Route::post('/registered','registered')->name('registered');
 
 });
